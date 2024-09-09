@@ -1,0 +1,155 @@
+/* General page styling */
+.page-container {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0D47A1 0%, #0d3b8c 100%);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    min-height: 100vh;
+    padding: 20px;
+    color: #fff;
+  }
+  
+  /* Keyframe animation for the flowing background */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Deposit list section */
+  .content {
+    background: rgba(0, 0, 50, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .deposit-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .deposit-list li {
+    background: rgba(0, 0, 50, 0.3);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .deposit-list li:hover {
+    transform: translateY(-5px);  /* Slight hover effect */
+  }
+  
+  .deposit-list li p {
+    margin: 0;
+  }
+  
+  /* Notifications section */
+  .notifications {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    z-index: 10;  /* Make sure it stays on top */
+  }
+  
+  .notif-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .notif-icon:hover {
+    transform: scale(1.1);  /* Slightly enlarge the bell on hover */
+  }
+  
+  .notif-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  
+  .notif-list h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+  }
+  
+  .notif-list ul {
+    list-style-type: none;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .notif-list ul li {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+  
+  /* Notification pop-down visible state */
+  .notifications .notif-list {
+    max-height: 300px;  /* Allows room for the 10 blocks, adjust as necessary */
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .notifications {
+      right: 10px;  /* Adjust the position of the notification icon */
+      width: 200px;  /* Reduce the width of the notification pop-down */
+    }
+  
+    .notif-icon {
+      font-size: 1.5rem;  /* Reduce the size of the bell icon on smaller screens */
+    }
+  
+    .notif-list {
+      max-height: 250px;  /* Reduce the max-height of the notification list */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .notifications {
+      right: 5px;
+      width: 180px;  /* Further reduce width for small screens */
+    }
+  
+    .notif-icon {
+      font-size: 1.2rem;  /* Further reduce the size of the bell icon */
+    }
+  
+    .notif-list {
+      max-height: 200px;  /* Reduce max-height further for small screens */
+    }
+  }
+  
